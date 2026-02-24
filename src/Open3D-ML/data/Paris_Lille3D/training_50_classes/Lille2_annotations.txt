@@ -1,0 +1,43 @@
+15, 304020000, tree, several
+27, 304020000, tree, several
+91, 303050500, trash can, overturned
+100, 304020000, tree, several
+114, 304020000, tree
+128, 302020700, signboard, bus stop
+132, 303050500, trash can, overturned
+144, 303050500, trash can, overturned
+145, 304020000, tree
+147, 100000000, other, unknown
+158, 100000000, other, stone
+165, 303050500, trash can, overturned
+167, 304020000, tree
+171, 303020000, pedestrian, mobile
+174, 303050500, trash can, overturned
+181, 303020000, pedestrian, mobile
+189, 303050500, trash can, overturned
+190, 303050500, trash can, overturned
+198, 302020700, signboard, bus stop
+215, 303050500, trash can, overturned
+226, 303050500, trash can, overturned
+235, 303020000, pedestrian, mobile
+239, 100000000, other, stone
+261, 100000000, other, stone
+272, 303050500, trash can, overturned
+280, 303050500, trash can, overturned
+289, 100000000, other, unknown
+295, 100000000, other, stone
+313, 100000000, other, stone
+321, 303050500, trash can, overturned
+322, 303050500, trash can, overturned
+325, 303050500, trash can, overturned
+327, 303050500, trash can, overturned
+329, 100000000, other, stone
+337, 303050500, trash can, overturned
+350, 100000000, other, unknown
+354, 303050500, trash can, overturned
+359, 100000000, other, unknown
+366, 100000000, other, stone
+373, 303050500, trash can, overturned
+402, 303050500, trash can, overturned
+404, 303050500, trash can, overturned
+406, 303050500, trash can, overturned

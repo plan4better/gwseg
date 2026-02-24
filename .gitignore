@@ -97,3 +97,7 @@ target/
 
 # Exclude data
 /data/
+
+
+# Exclude logs
+/logs/

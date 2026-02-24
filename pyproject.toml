@@ -18,7 +18,8 @@ dependencies = [
     "laspy[lazrs,laszip]>=2.4.1",
     "ipykernel>=6.29.5",
     "pyvista>=0.44.1",
-    "torch>=2.5.1",
-    "torchvision>=0.20.1",
+    "torch==2.1.2",
+    "torchvision==0.16.2",
     "cloth-simulation-filter>=1.1.5",
+    "tensorboard>=2.18.0",
 ]
