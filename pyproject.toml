@@ -22,4 +22,5 @@ dependencies = [
     "torchvision==0.16.2",
     "cloth-simulation-filter>=1.1.5",
     "tensorboard>=2.18.0",
+    "plyfile>=1.1",
 ]

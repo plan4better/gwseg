@@ -10,7 +10,18 @@ from ..utils import make_dir, DATASET
 
 log = logging.getLogger(__name__)
 
-
+label_to_names = {
+    0: 'unclassified',
+    1: 'ground',
+    2: 'building',
+    3: 'pole-road_sign-traffic_light',
+    4: 'bollard-small_pole',
+    5: 'trash_can',
+    6: 'barrier',
+    7: 'pedestrian',
+    8: 'car',
+    9: 'natural-vegetation'
+}
 class ParisLille3D(BaseDataset):
     """This class is used to create a dataset based on the ParisLille3D dataset,
     and used in visualizer, training, or testing.
@@ -78,18 +89,6 @@ class ParisLille3D(BaseDataset):
             A dict where keys are label numbers and
             values are the corresponding names.
         """
-        label_to_names = {
-            0: 'unclassified',
-            1: 'ground',
-            2: 'building',
-            3: 'pole-road_sign-traffic_light',
-            4: 'bollard-small_pole',
-            5: 'trash_can',
-            6: 'barrier',
-            7: 'pedestrian',
-            8: 'car',
-            9: 'natural-vegetation'
-        }
         return label_to_names
 
     def get_split(self, split):

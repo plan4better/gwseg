@@ -13,13 +13,15 @@ import open3d.ml as _ml3d
 import open3d.ml.torch as ml3d
 import open3d as o3d
 import glob
+from ml3d.datasets.parislille3d_50_classes import COLOR_MAP
 
-if ml3d._torch.backends.mps.is_available():
-    mps_device = ml3d._torch.device("mps")
-    x = ml3d._torch.ones(1, device=mps_device)
-    print (x)
-else:
-    print ("MPS device not found.")
+
+# if ml3d._torch.backends.mps.is_available():
+#     mps_device = ml3d._torch.device("mps")
+#     x = ml3d._torch.ones(1, device=mps_device)
+#     print (x)
+# else:
+#     print ("MPS device not found.")
 
 class GWSeg:
     """
@@ -200,74 +202,74 @@ def laspy_to_o3d(las: laspy.lasdata) -> o3d.t.geometry.PointCloud:
 
 
 # Class colors, RGB values as ints for easy reading
-COLOR_MAP = {
-    0: (0, 0, 0),
-    1: (245, 150, 100),
-    2: (245, 230, 100),
-    3: (150, 60, 30),
-    4: (180, 30, 80),
-    5: (255, 0., 0),
-    6: (30, 30, 255),
-    7: (200, 40, 255),
-    8: (90, 30, 150),
-    9: (255, 0, 255),
-    10: (255, 150, 255),
-    11: (75, 0, 75),
-    12: (75, 0., 175),
-    13: (0, 200, 255),
-    14: (50, 120, 255),
-    15: (0, 175, 0),
-    16: (0, 60, 135),
-    17: (80, 240, 150),
-    18: (150, 240, 255),
-    19: (0, 0, 255),
-}
+# COLOR_MAP = {
+#     0: (0, 0, 0),
+#     1: (245, 150, 100),
+#     2: (245, 230, 100),
+#     3: (150, 60, 30),
+#     4: (180, 30, 80),
+#     5: (255, 0., 0),
+#     6: (30, 30, 255),
+#     7: (200, 40, 255),
+#     8: (90, 30, 150),
+#     9: (255, 0, 255),
+#     10: (255, 150, 255),
+#     11: (75, 0, 75),
+#     12: (75, 0., 175),
+#     13: (0, 200, 255),
+#     14: (50, 120, 255),
+#     15: (0, 175, 0),
+#     16: (0, 60, 135),
+#     17: (80, 240, 150),
+#     18: (150, 240, 255),
+#     19: (0, 0, 255),
+# }
 
-# ------ for custom data -------
-labels = {
-    ### SemanticKITTI labels
-    0: 'unlabeled',
-    1: 'car',
-    2: 'bicycle',
-    3: 'motorcycle',
-    4: 'truck',
-    5: 'other-vehicle',
-    6: 'person',
-    7: 'bicyclist',
-    8: 'motorcyclist',
-    9: 'road',
-    10: 'parking',
-    11: 'sidewalk',
-    12: 'other-ground',
-    13: 'building',
-    14: 'fence',
-    15: 'vegetation',
-    16: 'trunk',
-    17: 'terrain',
-    18: 'pole',
-    19: 'traffic-sign',
-    #### Toronto3D labels
-    # 0: 'Unclassified',
-    # 1: 'Ground',
-    # 2: 'Road_markings',
-    # 3: 'Natural',
-    # 4: 'Building',
-    # 5: 'Utility_line',
-    # 6: 'Pole',
-    # 7: 'Car',
-    # 8: 'Fence', 
-    #### ParisLille3D labels
-    # 0: 'unclassified',
-    # 1: 'ground',
-    # 2: 'building',
-    # 3: 'pole-road_sign-traffic_light',
-    # 4: 'bollard-small_pole',
-    # 5: 'trash_can',
-    # 6: 'barrier',
-    # 7: 'pedestrian',
-    # 8: 'car',
-    # 9: 'natural-vegetation'
-}
+# # ------ for custom data -------
+# labels = {
+#     ### SemanticKITTI labels
+#     0: 'unlabeled',
+#     1: 'car',
+#     2: 'bicycle',
+#     3: 'motorcycle',
+#     4: 'truck',
+#     5: 'other-vehicle',
+#     6: 'person',
+#     7: 'bicyclist',
+#     8: 'motorcyclist',
+#     9: 'road',
+#     10: 'parking',
+#     11: 'sidewalk',
+#     12: 'other-ground',
+#     13: 'building',
+#     14: 'fence',
+#     15: 'vegetation',
+#     16: 'trunk',
+#     17: 'terrain',
+#     18: 'pole',
+#     19: 'traffic-sign',
+#     #### Toronto3D labels
+#     # 0: 'Unclassified',
+#     # 1: 'Ground',
+#     # 2: 'Road_markings',
+#     # 3: 'Natural',
+#     # 4: 'Building',
+#     # 5: 'Utility_line',
+#     # 6: 'Pole',
+#     # 7: 'Car',
+#     # 8: 'Fence', 
+#     #### ParisLille3D labels
+#     # 0: 'unclassified',
+#     # 1: 'ground',
+#     # 2: 'building',
+#     # 3: 'pole-road_sign-traffic_light',
+#     # 4: 'bollard-small_pole',
+#     # 5: 'trash_can',
+#     # 6: 'barrier',
+#     # 7: 'pedestrian',
+#     # 8: 'car',
+#     # 9: 'natural-vegetation'
+# }
 
 def load_custom_dataset(dataset_path):
 	print("Loading custom dataset")
@@ -279,18 +281,24 @@ def load_custom_dataset(dataset_path):
 
 
 def prepare_point_cloud_for_inference(pcd):
-    coords_offset = [410700.00, 5477700.00, 228.9439]
-    # Remove NaNs and infinity values
-    points = np.vstack([pcd.x, pcd.y, pcd.z]).T - coords_offset
-    points = np.float32(points)
-    colors = (np.vstack([pcd.red, pcd.green, pcd.blue]).T / 256).astype(np.float32)
-    feat = colors
-    intensity = pcd.intensity.astype(np.float32)
+    # # coords_offset = [410700.00, 5477700.00, 228.9439]
+    # # Remove NaNs and infinity values
+    # points = np.vstack([pcd.x, pcd.y, pcd.z]).T
+    # points = np.float32(points)
+    # # colors = (np.vstack([pcd.red, pcd.green, pcd.blue]).T / 256).astype(np.float32)
+    # # feat = colors
+    # # intensity = pcd.intensity.astype(np.float32)
 
-    labels = np.zeros(np.shape(points)[0], dtype=np.int32)
+    # labels = np.zeros(np.shape(points)[0], dtype=np.int32)
+    data = {
+        "point": np.asarray(pcd.points, dtype=np.float32),
+        'feat': None,
+        'label': np.zeros((len(pcd.points),), dtype=np.int32)
+    }
+
 
     # data = {"point": points, 'feat': feat, 'intensity': intensity, 'label': labels}
-    data = {"point": points, 'feat': None, 'label': labels}
+    # data = {"point": points, 'feat': None, 'label': labels}
 
     return data, pcd
 
@@ -312,11 +320,12 @@ if __name__ == "__main__":
 
     # cfg_file = "configs/randlanet_toronto3d.yml"
     cfg_file = "configs/randlanet_semantickitti.yml"
-    # cfg_file = "configs/randlanet_parislille3d.yml"
+    # cfg_file = "src/Open3D-ML/ml3d/configs/randlanet_parislille3d.yml"
+    # cfg_file = "src/Open3D-ML/ml3d/configs/randlanet_parislille3d_50c.yml"
     cfg = _ml3d.utils.Config.load_from_file(cfg_file)
     model = ml3d.models.RandLANet(**cfg.model)
     
-    # download the weights.
+    # download the weights.ß
     ckpt_folder = "./logs/"
     os.makedirs(ckpt_folder, exist_ok=True)
     ckpt_path = ckpt_folder + "randlanet_semantickitti_202201071330utc.pth"
@@ -325,6 +334,8 @@ if __name__ == "__main__":
     # randlanet_url = "https://storage.googleapis.com/open3d-releases/model-zoo/randlanet_toronto3d_202201071330utc.pth"
     # ckpt_path = ckpt_folder + "randlanet_parislille3d_202201071330utc.pth"
     # randlanet_url = "https://storage.googleapis.com/open3d-releases/model-zoo/randlanet_parislille3d_202201071330utc.pth"
+    # ckpt_path = ckpt_folder + "ckpt_00100.pth"
+    # randlanet_url = ""
     if not os.path.exists(ckpt_path):
         cmd = "wget {} -O {}".format(randlanet_url, ckpt_path)
         os.system(cmd)
@@ -332,7 +343,7 @@ if __name__ == "__main__":
     # cfg.dataset['dataset_path'] = "data/raw/SemanticKITTI"
     # cfg.dataset['custom_dataset_path'] = "data/raw/pcds"
     # dataset = ml3d.datasets.ParisLille3D(cfg.dataset.pop('dataset_path', None), **cfg.dataset)
-    pipeline = ml3d.pipelines.SemanticSegmentation(model, device="mps", **cfg.pipeline)
+    pipeline = ml3d.pipelines.SemanticSegmentation(model, **cfg.pipeline)
     # load the parameters.
     pipeline.load_ckpt(ckpt_path=ckpt_path)
 
@@ -340,15 +351,24 @@ if __name__ == "__main__":
     # test_data = test_split.get_data(0)
 
     gwseg = GWSeg()
-    pcd = gwseg.read("data/raw/filtered_8214_109554.laz")
-    pcd, pcd_non_ground, pcd_ground = gwseg.csf(pcd)
+    # pcd = gwseg.read("data/raw/ajaccio_2.las")
+    pcd = o3d.io.read_point_cloud("data/raw/filtered_8214_109554.ply")
+    pcd.remove_non_finite_points()
+    # pcd, pcd_non_ground, pcd_ground = gwseg.csf(pcd)
     # data = gwseg.prepare_for_inference(pcd_ground)
     # # Get one test point cloud from the custom dataset
     # pc_idx = 0 # change the index to get a different point cloud
-    data, pcd = prepare_point_cloud_for_inference(pcd)
+    # data, pcd = prepare_point_cloud_for_inference(pcd)
+    # feat = data["colors"].numpy().astype(np.float32)
+    data = {
+        "point" : np.asarray(pcd.points, dtype=np.float32),
+        "feat": np.array(pcd.colors, dtype=np.float32),
+        "label" : np.zeros((len(pcd.points),), dtype=np.int32)
+    }
 
     # Run inference
     result = pipeline.run_inference(data)    
+
 
     # Colorize the point cloud with predicted labels
     o3d_pcd = o3d.geometry.PointCloud()

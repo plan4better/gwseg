@@ -1,0 +1,90 @@
+6, 304020000, tree, several
+10, 304020000, tree, several
+25, 304020000, tree, several
+27, 304020000, tree, several
+43, 304020000, tree, several
+87, 304020000, tree, several
+218, 303020000, pedestrian, mobile
+248, 100000000, other, people sitting in a café
+250, 302020700, signboard, payment terminal for free access bicycle
+266, 302020600, traffic sign, bus stop
+267, 100000000, other, people sitting in a café
+270, 303020000, pedestrian, mobile
+271, 303020000, pedestrian, mobile
+275, 100000000, other, people sitting in a café
+278, 302020900, trash can, for glass
+280, 303020000, pedestrian, mobile
+284, 303020000, pedestrian, mobile
+287, 303020000, pedestrian, mobile
+294, 100000000, other, shed
+303, 303020000, pedestrian, mobile
+306, 303020000, pedestrian, mobile
+313, 303020000, pedestrian, mobile
+321, 303020000, pedestrian, mobile, with dog
+329, 100000000, other, unknown
+334, 303030204, parked bicycle, with bicycle terminal
+335, 303020000, pedestrian, mobile
+336, 303020000, pedestrian, mobile
+339, 303030204, parked bicycle, with bicycle terminal
+340, 303020000, pedestrian, mobile
+341, 303030204, parked bicycle, with bicycle terminal
+344, 303020000, pedestrian, mobile
+349, 303030204, parked bicycle, with bicycle terminal
+351, 303030204, parked bicycle, with bicycle terminal
+352, 303030204, parked bicycle, with bicycle terminal
+356, 303030204, parked bicycle, with bicycle terminal
+359, 303020000, pedestrian, mobile
+362, 303020000, pedestrian, mobile
+365, 303030204, parked bicycle, with bicycle terminal
+366, 303030204, parked bicycle, with bicycle terminal
+369, 303020000, pedestrian, mobile
+370, 303030204, parked bicycle, with bicycle terminal
+372, 303030204, parked bicycle, with bicycle terminal
+374, 303020000, pedestrian, mobile
+375, 303030204, parked bicycle, with bicycle terminal
+376, 303020000, pedestrian, mobile
+377, 303020000, pedestrian, mobile
+379, 303030204, parked bicycle, with bicycle terminal
+382, 303030204, parked bicycle, with bicycle terminal
+384, 303030204, parked bicycle, with bicycle terminal
+386, 303030204, parked bicycle, with bicycle terminal
+387, 303030204, parked bicycle, with bicycle terminal
+388, 303030204, parked bicycle, with bicycle terminal
+389, 303030204, parked bicycle, with bicycle terminal
+390, 303030204, parked bicycle, with bicycle terminal
+391, 303020000, pedestrian, mobile
+392, 303030204, parked bicycle, with bicycle terminal
+393, 100000000, other, shed
+395, 303030204, parked bicycle, with bicycle terminal
+397, 100000000, other, unknown
+401, 303020000, pedestrian, mobile
+404, 303020000, pedestrian, mobile
+407, 100000000, other, shed
+408, 303020000, pedestrian, mobile
+411, 303020000, pedestrian, mobile
+416, 303020000, pedestrian, mobile
+423, 303020000, pedestrian, mobile
+424, 303020000, pedestrian, mobile, with dog
+428, 303020000, pedestrian, mobile
+430, 303020000, pedestrian, mobile
+433, 303020000, pedestrian, mobile
+435, 303020000, pedestrian, mobile
+440, 303020000, pedestrian, mobile
+442, 303020000, pedestrian, mobile
+445, 302020600, traffic sign, bus stop
+448, 100000000, other, unknown
+450, 303020000, pedestrian, mobile
+454, 303020000, pedestrian, mobile
+455, 303020000, pedestrian, mobile
+458, 303020000, pedestrian, mobile
+460, 303020000, pedestrian, mobile
+471, 303020000, pedestrian, mobile
+475, 100000000, other, people sitting in a café
+483, 303020000, pedestrian, mobile
+488, 303020000, pedestrian, mobile, with dog
+489, 303020000, pedestrian, mobile
+496, 303020000, pedestrian, mobile
+512, 303020000, pedestrian, mobile
+535, 303020000, pedestrian, mobile
+567, 303020000, pedestrian, mobile
+583, 100000000, other, chain
